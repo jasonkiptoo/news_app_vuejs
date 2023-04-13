@@ -76,13 +76,6 @@ export default {
 </script>
 <!-- template -->
 <template>
-  <!-- <div>
-    <button @click="toggleSidebar">Toggle Sidebar</button>
-    <div :class="sidebarClass">
-      <h2>Sidebar Content</h2>
-    </div>
-    <div>Main Content</div>
-  </div> -->
 
   <!-- sidebar -->
   <div :class="sidebarClass">
@@ -101,7 +94,7 @@ export default {
       <div class="menu-items">
         <ul class="list-items" v-for="item in filteredSources" :key="item.id">
           <li>{{ item.source.name }}</li>
-         
+
         </ul>
       </div>
     </div>
@@ -116,8 +109,7 @@ export default {
         <h2>News Time</h2>
       </div>
       <div class="search">
-        <!-- <input type="text" v-model="searchQuery" placeholder="Search news..." /> -->
-        <!-- <input type="text" name="search" id=""> -->
+      
         <input
           type="text"
           v-model="searchQuery"
