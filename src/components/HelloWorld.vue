@@ -109,7 +109,7 @@ export default {
         <h2>News Time</h2>
       </div>
       <div class="search">
-      
+
         <input
           type="text"
           v-model="searchQuery"
@@ -151,10 +151,10 @@ export default {
           <button class="tw_btn">
             <font-awesome-icon icon="fa-brands fa-twitter" /> twitter
           </button>
-
-          <button @click="toggleExpansion(article)" class="rd_btn">
+<!-- read more button -->
+          <!-- <button @click="toggleExpansion(article)" class="rd_btn">
             Read More
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
