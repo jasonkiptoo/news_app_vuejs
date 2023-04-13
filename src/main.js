@@ -12,13 +12,13 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 /* import specific icons */
-import { faBars, faMagnifyingGlass, faUserSecret } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faMagnifyingGlass, faUserSecret, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 
 // vue use
 // Vue.use(axios)
 /* add icons to the library */
-library.add(faUserSecret, faBars, faTwitter, faMagnifyingGlass);
+library.add(faUserSecret, faBars, faTwitter, faMagnifyingGlass, faXmark);
 
 const store = createStore({
   state() {
