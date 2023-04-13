@@ -11,9 +11,7 @@ export default {
   },
 
   methods: {
-    // isExpanded(article) {
-    //   return this.expandedArticles.includes(article.id);
-    // },
+
     toggleSidebar() {
       console.log("coll");
       this.isSidebarOpen = !this.isSidebarOpen;
@@ -50,6 +48,7 @@ export default {
       });
   },
   computed: {
+
     filteredArticles() {
       console.log(this.searchQuery);
       if (!this.searchQuery) {
@@ -59,6 +58,12 @@ export default {
           article.title.toLowerCase().includes(this.searchQuery.toLowerCase())
         );
       }
+    },
+    // filterred sources to avoid repeating sources
+    filteredSources(){
+      const uniqueSources = [...new Set(this.articles.map(item => item.source.name))];
+      return uniqueSources.map(name => this.articles.find(item => item.source.name === name));
+
     },
     sidebarClass() {
       return {
@@ -94,7 +99,7 @@ export default {
       </div>
 
       <div class="menu-items">
-        <ul class="list-items" v-for="item in articles" :key="item.id">
+        <ul class="list-items" v-for="item in filteredSources" :key="item.id">
           <li>{{ item.source.name }}</li>
          
         </ul>
