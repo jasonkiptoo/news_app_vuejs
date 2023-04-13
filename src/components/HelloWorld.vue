@@ -83,7 +83,7 @@ export default {
   <div :class="sidebarClass">
     <div class="sidebar-container">
       <div class="logo-container">
-        <div class="logo">News app</div>
+        <div class="logo">Source</div>
         <div class="icon">
           <font-awesome-icon
             icon="fa-solid fa-xmark"
@@ -94,10 +94,9 @@ export default {
       </div>
 
       <div class="menu-items">
-        <ul class="list-items">
-          <li>item 1</li>
-          <li>item 2</li>
-          <li>item 3</li>
+        <ul class="list-items" v-for="item in articles" :key="item.id">
+          <li>{{ item.source.name }}</li>
+         
         </ul>
       </div>
     </div>
@@ -199,6 +198,8 @@ export default {
 
 .sidebar-container-close {
   display: none;
+  transition: all 50s ease-out;
+
 }
 .sidebar-container {
   background-color: #1976d2;
@@ -209,6 +210,7 @@ export default {
   z-index: 1;
   left: 0;
   top: 0;
+  transition: all 50s ease-out;
 }
 .logo-container {
   display: grid;
@@ -218,8 +220,15 @@ export default {
 }
 .logo {
   font-size: xx-large;
+  font-family: times;
+  font-weight: bolder;
+  margin-left: 10px;
 }
-
+.list-itemS{
+  font-weight: bolder;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+}
 /* responsive navbar */
 @media only screen and (max-width: 500px) {
   .navbar {
